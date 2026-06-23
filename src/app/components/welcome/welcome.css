@@ -1,87 +1,138 @@
 .hero-section {
-  padding: 4rem 2rem;
-  background: radial-gradient(circle at top right, rgba(219, 39, 39, 0.03), transparent);
+  padding: 5rem 2rem;
+  background: radial-gradient(circle at top right, rgba(219, 39, 39, 0.03) 0%, rgba(255, 255, 255, 0) 60%), #ffffff;
   width: 100%;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .hero-content {
   max-width: 80rem;
   margin: 0 auto;
   display: flex;
-  flex-direction: row; /* Fuerza a que estén uno al lado del otro siempre en PC */
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .hero-text {
-  flex: 1; /* Toma el espacio correspondiente a la izquierda */
+  flex: 1.2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;
-  min-width: 50%; /* Le asegura su mitad del espacio */
 }
 
 .hero-title {
   font-family: 'Fredoka', sans-serif;
-  font-size: 3.5rem; /* Tamaño intermedio perfecto */
+  font-size: 4rem;
   font-weight: 800;
-  line-height: 1.1;
-  color: #111827;
+  line-height: 1.15;
+  color: #0f172a;
   margin: 0;
+  letter-spacing: -0.01em;
 }
 
 .highlight {
   color: #db2727;
+  position: relative;
+  display: inline-block;
 }
 
 .hero-description {
+  font-family: 'Nunito', sans-serif;
   font-size: 1.125rem;
   line-height: 1.6;
   color: #4b5563;
   margin: 0;
+  max-width: 32rem;
 }
 
 /* --- CONTENEDOR DE LA IMAGEN --- */
 .hero-gallery {
-  flex: 1;
+  flex: 0.8;
   display: flex;
-  justify-content: flex-end; /* Lo alinea bien a la derecha */
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .gallery-item {
   width: 100%;
-  max-width: 16rem; /* Reducimos el tamaño para que el osito no se coma la pantalla (aprox 350px) */
+  max-width: 25rem;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.hero-img {
+.welcome-img {
   width: 100%;
   height: auto;
   object-fit: contain;
   display: block;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.05));
+  animation: float 6s ease-in-out infinite;
 }
 
-/* --- RESPONSIVO PARA CELULARES --- */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* --- RESPONSIVO PARA TABLETAS Y CELULARES --- */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 3.2rem;
+  }
+  .gallery-item {
+    max-width: 20rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 1.5rem;
+  }
+  
   .hero-content {
-    flex-direction: column; /* En celulares sí se pone uno abajo del otro */
+    flex-direction: column-reverse; /* Put the text below the image or image below text? In standard layouts, image is often first on mobile, or text. Let's do text first, so column. */
+    flex-direction: column;
     text-align: center;
+    gap: 2.5rem;
   }
   
   .hero-text {
     align-items: center;
-    min-width: 100%;
+    text-align: center;
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 
   .hero-gallery {
     justify-content: center;
+    width: 100%;
+  }
+
+  .gallery-item {
+    max-width: 18rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .gallery-item {
+    max-width: 14rem;
   }
 }

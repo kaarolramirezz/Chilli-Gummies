@@ -22,8 +22,8 @@
 .header-content {
   max-width: 80rem;
   margin: 0 auto;
-  padding: 0.40rem 1rem;
-  min-height: 4rem;
+  padding: 0.5rem 1rem;
+  min-height: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,8 +40,8 @@
 }
 
 .logo-icon {
-  width: 70px;    
-  height: 70px;
+  width: 42px;    
+  height: 42px;
   object-fit: contain;
   display: block;
 }
@@ -111,7 +111,7 @@ app-shopping-cart-sheet {
     font-size: 1.25rem;
   }
   .logo-icon {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
   }
 }

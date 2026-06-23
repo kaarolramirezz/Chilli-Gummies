@@ -9,7 +9,7 @@ import { Footer } from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, ShoppingCartSheet, Welcome, Categories, Footer],
+  imports: [FormsModule, ShoppingCartSheet, Welcome, Categories, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css',
   standalone: true
