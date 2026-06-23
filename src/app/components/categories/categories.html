@@ -1,0 +1,13 @@
+<div class="categories-bar">
+  <div class="categories-container">
+    @for (category of categories; track category) {
+      <button 
+        class="category-btn" 
+        [class.active]="selectedCategory === category"
+        (click)="selectCategory.emit(category)">
+        <span>{{ categoryEmojis[category] || '🍬' }}</span>
+        {{ category }}
+      </button>
+    }
+  </div>
+</div>
