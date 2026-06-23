@@ -12,12 +12,6 @@
   padding: 0;
 }
 
-.cart-btn:hover {
-  background-color: #e5e7eb;
-  border-color: #d1d5db;
-  transform: translateY(-1px);
-}
-
 .cart-btn:active {
   transform: translateY(0);
 }
@@ -28,5 +22,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: grayscale(100%) brightness(0.6); /* Makes the emoji look like a clean monochrome icon */
+  filter: grayscale(100%) brightness(0.6);
 }

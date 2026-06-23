@@ -1,6 +1,6 @@
 .hero-section {
-  padding: 5rem 2rem;
-  background: radial-gradient(circle at top right, rgba(219, 39, 39, 0.03) 0%, rgba(255, 255, 255, 0) 60%), #ffffff;
+  padding: 3rem 2rem;
+  background: radial-gradient(circle at top right, rgba(239, 56, 56, 0.3) 0%, rgba(216, 53, 53, 0) 60%), #faf4f4;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
@@ -51,7 +51,7 @@
 
 /* --- CONTENEDOR DE LA IMAGEN --- */
 .hero-gallery {
-  flex: 0.8;
+  flex: 0.6;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -59,7 +59,7 @@
 
 .gallery-item {
   width: 100%;
-  max-width: 25rem;
+  max-width: 30rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,7 +71,6 @@
   object-fit: contain;
   display: block;
   filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.05));
-  animation: float 6s ease-in-out infinite;
 }
 
 @keyframes float {

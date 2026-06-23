@@ -40,8 +40,8 @@
 }
 
 .logo-icon {
-  width: 42px;    
-  height: 42px;
+  width: 60px;    
+  height: 60px;
   object-fit: contain;
   display: block;
 }
@@ -115,3 +115,90 @@ app-shopping-cart-sheet {
     height: 35px;
   }
 }
+
+/* --- PRODUCT SECTION & GRID --- */
+.products-section {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem 2rem;
+  box-sizing: border-box;
+}
+
+.section-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.active-category-name {
+  color: #db2727;
+}
+
+.section-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.05rem;
+  color: #64748b;
+  margin: 0.35rem 0 0 0;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* --- NO PRODUCTS STATE --- */
+.no-products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 2rem;
+  background-color: #f8fafc;
+  border-radius: 16px;
+  border: 1px dashed #cbd5e1;
+  max-width: 32rem;
+  margin: 2rem auto;
+}
+
+.no-products-emoji {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.no-products-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+}
+
+.no-products-desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .products-section {
+    padding: 2rem 1.5rem 4rem 1.5rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.5rem;
+  }
+}

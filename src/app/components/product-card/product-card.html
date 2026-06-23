@@ -1,0 +1,27 @@
+<div class="card-container" [class.out-of-stock]="!product.inStock">
+  <div class="image-wrapper">
+    <img [src]="product.image" [alt]="product.name" class="product-image">
+    <div class="product-badges">
+      <span class="weight-badge">{{ product.weight }}</span>
+    </div>
+  </div>
+  
+  <div class="product-info">
+    <h3 class="product-title">{{ product.name }}</h3>
+    <p class="product-desc">{{ product.description }}</p>
+    
+    <div class="price-action">
+      <div class="price-container">
+        <span class="currency">$</span>
+        <span class="price-val">{{ product.price }}</span>
+        <span class="currency-code">MXN</span>
+      </div>
+      <button 
+        class="add-btn" 
+        [disabled]="!product.inStock"
+        (click)="addToCart.emit(product)">
+        <span>{{ product.inStock ? 'Añadir 🛒' : 'Agotado' }}</span>
+      </button>
+    </div>
+  </div>
+</div>

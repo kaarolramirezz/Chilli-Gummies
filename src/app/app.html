@@ -18,7 +18,42 @@
   </header>
 
   <app-welcome></app-welcome>
-  <app-categories></app-categories>
+  
+  <app-categories 
+    [categories]="categoriesList" 
+    [selectedCategory]="selectedCategory" 
+    (selectCategory)="selectedCategory = $event">
+  </app-categories>
+
+  <main class="products-section">
+    <div class="section-header">
+      <h2 class="section-title">
+        Nuestras Gomitas 
+        @if (selectedCategory !== 'All') {
+          <span class="active-category-name"> - {{ selectedCategory }}</span>
+        }
+      </h2>
+      <p class="section-subtitle">Frescas, ácidas y con el toque justo de picante.</p>
+    </div>
+
+    @if (filteredProducts.length > 0) {
+      <div class="products-grid">
+        @for (product of filteredProducts; track product.id) {
+          <app-product-card 
+            [product]="product" 
+            (addToCart)="addToCart($event)">
+          </app-product-card>
+        }
+      </div>
+    } @else {
+      <div class="no-products">
+        <span class="no-products-emoji">🌶️😢</span>
+        <h3 class="no-products-title">No encontramos gomitas</h3>
+        <p class="no-products-desc">Intenta cambiar la búsqueda o selecciona otra categoría.</p>
+      </div>
+    }
+  </main>
+
   <app-footer></app-footer>
 
 </div>
